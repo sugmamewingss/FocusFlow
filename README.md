@@ -80,3 +80,10 @@ $$Coins = \frac{Duration \times Multiplier}{Distractions + 1}$$
 2. Buka di Android Studio (Versi Ladybug ke atas direkomendasikan).
 3. Tambahkan file google-services.json dari Firebase Console ke folder app/.
 4. Aktifkan Accessibility Service di pengaturan HP untuk mencoba fitur Hard Mode.
+
+---
+## 🖼️ Screenshot Taken:
+![WhatsApp Image 2026-01-06 at 21 38 43 (2)](https://github.com/user-attachments/assets/4225d299-e451-4695-ac23-042f4978076a)
+![WhatsApp Image 2026-01-07 at 21 50 52](https://github.com/user-attachments/assets/961de746-606f-4e90-83d4-db6d72f94d1b)
+![WhatsApp Image 2026-01-06 at 21 38 43](https://github.com/user-attachments/assets/043a31d5-e201-471c-a13a-0d0028b629ca)
+![WhatsApp Image 2026-01-06 at 21 38 43 (1)](https://github.com/user-attachments/assets/9778526e-777a-4e27-a950-3fe179dec9a3)
