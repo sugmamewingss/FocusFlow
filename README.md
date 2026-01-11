@@ -1,98 +1,82 @@
-FocusFlow: Transform Your Focus into a Flourishing World 🌿
-FocusFlow adalah asisten produktivitas berbasis Android yang mengubah manajemen waktu menjadi pengalaman gamifikasi yang menenangkan. Menggunakan teknik Pomodoro yang dipadukan dengan mekanisme virtual island, aplikasi ini membantu pengguna membangun disiplin melalui ekosistem digital yang hidup.
+# FocusFlow: Build Your Focus, Grow Your World 🌿
 
-🚀 Visi Produk
-Menjadi asisten produktivitas nomor satu yang mengubah rutinitas membosankan menjadi perjalanan membangun disiplin yang estetis dan interaktif.
+[![Kotlin Version](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg)](https://kotlinlang.org/)
+[![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://developer.android.com/)
+[![UI](https://img.shields.io/badge/UI-Jetpack_Compose-orange.svg)](https://developer.android.com/jetpack/compose)
 
-✨ Fitur Utama
-1. The Engine (Mesin Fokus)
-Deep Work Timer: Mode Pomodoro yang dapat dikustomisasi (25/5, 50/10, atau Unlimited Flow).
+**FocusFlow** adalah aplikasi asisten produktivitas Android yang menggabungkan teknik manajemen waktu dengan mekanisme *virtual world-building*. Ubah durasi fokusmu menjadi aset digital yang indah dan bangun disiplin dengan cara yang menenangkan.
 
-Multi-Level Blocking:
+---
 
-Soft Mode: Notifikasi persuasif jika mencoba keluar dari aplikasi.
+## ✨ Fitur Utama (Core Features)
 
-Hard Mode: Penguncian aplikasi distraksi (Instagram, TikTok, dll) menggunakan Accessibility Service.
+### 🚀 The Engine (Mesin Fokus)
+* **Deep Work Timer:** Teknik Pomodoro yang bisa dikustomisasi (25/5, 50/10, atau Flow State).
+* **Multi-Level Blocking:**
+    * *Soft Mode:* Notifikasi persuasif jika keluar aplikasi.
+    * *Hard Mode:* Mengunci aplikasi distraksi menggunakan **Accessibility Service**.
+* **Smart Whitelist:** Izinkan aplikasi tertentu berdasarkan kategori tugas (Contoh: Buka *ChatGPT* saat kategori "Coding").
 
-Smart Whitelist: Akses aplikasi tertentu berdasarkan kategori tugas (Contoh: Buka StackOverflow otomatis diizinkan saat sesi "Coding").
+### 🏝️ The Island (Gamifikasi)
+* **Virtual Island:** Setiap sesi fokus yang berhasil akan menumbuhkan tanaman atau bangunan di pulau pribadimu.
+* **Permadeath Mechanic:** Jika kamu menyerah di tengah sesi, tanaman akan layu secara permanen.
+* **Zen Coins:** Mata uang hasil kerja keras untuk membeli dekorasi pulau yang langka.
 
-2. The Island (Ekosistem Gamifikasi)
-Virtual Island: Mulai dengan pulau kosong dan tumbuhkan ekosistemmu setiap kali berhasil fokus.
+### 📊 Analitik AI & Sinkronisasi
+* **Productivity Heatmap:** Mengetahui kapan waktu paling produktifmu.
+* **Anti-Cheating Sync:** Sinkronisasi otomatis ke ekstensi browser untuk memblokir situs hiburan di laptop saat mode fokus aktif.
 
-Permadeath Mechanic: Jika menyerah di tengah jalan, tanaman akan layu atau bangunan akan runtuh.
+---
 
-Zen Coins: Dapatkan mata uang virtual untuk membeli dekorasi langka.
+## 🛠️ Tech Stack
 
-3. Analitik AI & Sinkronisasi
-Productivity Heatmap: Visualisasi jam paling produktif Anda.
+| Komponen | Teknologi |
+| :--- | :--- |
+| **Bahasa** | Kotlin |
+| **UI Framework** | Jetpack Compose |
+| **Database Local** | Room Database |
+| **Cloud/Sync** | Firebase Firestore |
+| **Background Task** | WorkManager |
+| **Arsitektur** | MVVM (Model-View-ViewModel) |
 
-Distraction Insights: Analisis aplikasi mana yang paling sering mengganggu fokus Anda.
+---
 
-Cross-Device Sync: Sinkronisasi status fokus dengan ekstensi browser untuk memblokir situs hiburan di laptop.
+## 📐 Arsitektur Data
 
-🛠️ Tech Stack
-Language: Kotlin
+### Logika Perhitungan Reward
+Kami menggunakan formula khusus untuk menghitung perolehan koin berdasarkan tingkat kesulitan:
 
-UI Framework: Jetpack Compose (Declarative UI & Smooth Animations)
+$$Coins = \frac{Duration \times Multiplier}{Distractions + 1}$$
 
-Local Database: Room Persistence
+* **Multiplier:** Hard Mode (1.5x) | Soft Mode (1.0x).
+* **Distractions:** Jumlah percobaan akses aplikasi terlarang.
 
-Cloud Database: Firebase Firestore (Real-time Sync)
+### Skema Database Utama
+* `Users`: Profil, total XP, Zen Coins.
+* `FocusSessions`: Riwayat waktu, durasi, dan status (Success/Failed).
+* `VirtualAssets`: Inventory item dekorasi pulau.
+* `AppWhitelist`: Konfigurasi paket aplikasi yang diizinkan.
 
-Background Processing: WorkManager
+---
 
-Logic: Accessibility Service API (untuk Hard Mode blocking)
+## 🎨 Desain Visual
+* **Tema:** Minimalist-Zen dengan palet warna Pastel (Sage Green, Soft Blue, Warm Beige).
+* **Ambience:** Integrasi suara latar seperti Binaural beats, White noise, dan Lofi hip-hop.
 
-📊 Arsitektur Data & Logika
-Skema Database (Simplifikasi)
-Aplikasi ini menggunakan struktur data relasional untuk mengelola progres pengguna:
+---
 
-Users: Profil, Zen Coins, dan Level.
+## 🛣️ Roadmap
+- [x] **V1 (MVP):** Timer dasar, Hard Mode, dan 1 jenis pulau sederhana.
+- [ ] **V2:** Sinkronisasi ke ekstensi Chrome dan Leaderboard global.
+- [ ] **V3:** Integrasi AI Coach dan kustomisasi pulau 3D Assets.
 
-FocusSessions: Riwayat waktu, durasi, dan status keberhasilan.
+---
 
-VirtualAssets: Katalog item dekorasi pulau.
+## ⚙️ Cara Menjalankan Project
 
-AppWhitelist: Daftar aplikasi yang diizinkan per kategori.
-
-Formula Reward
-Kami menggunakan algoritma khusus untuk menghitung perolehan koin agar tetap adil dan menantang:
-
-Coins= 
-Distractions+1
-Duration×Multiplier
-​
- 
-Keterangan:
-
-Multiplier: Hard Mode (1.5x) | Soft Mode (1.0x).
-
-Distractions: Jumlah percobaan membuka aplikasi terlarang.
-
-🎨 Desain UI/UX
-Tema: Minimalist-Zen (Sage Green, Soft Blue, Warm Beige).
-
-Atmosphere: Animasi pohon tertiup angin dan integrasi suara latar (Binaural beats, White noise, Lofi).
-
-🛣️ Roadmap Pengembangan
-[x] V1 (MVP): Core Timer, Hard Mode dasar, dan 1 jenis pulau.
-
-[ ] V2: Chrome Extension Sync & Social Leaderboard.
-
-[ ] V3: AI Productivity Coach & 3D Island Assets.
-
-⚙️ Instalasi (Bagi Developer)
-Clone repositori ini:
-
-Bash
-
-git clone https://github.com/username/FocusFlow.git
-Buka project di Android Studio Ladybug atau versi terbaru.
-
-Hubungkan dengan project Firebase Anda (tambahkan google-services.json).
-
-Pastikan perangkat/emulator memiliki izin Accessibility Service untuk menguji fitur Hard Mode.
-
-Build & Run.
-
-FocusFlow — Build your focus, grow your world.
+1. Clone repositori:
+   ```bash
+   git clone [https://github.com/username/FocusFlow.git](https://github.com/username/FocusFlow.git)
+2. Buka di Android Studio (Versi Ladybug ke atas direkomendasikan).
+3. Tambahkan file google-services.json dari Firebase Console ke folder app/.
+4. Aktifkan Accessibility Service di pengaturan HP untuk mencoba fitur Hard Mode.
